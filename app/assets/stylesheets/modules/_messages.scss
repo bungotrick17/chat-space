@@ -46,15 +46,20 @@
   &__list {
     margin-bottom: 40px;
     font-weight: bold;
-    color: #ffffff
+    color: #ffffff;
   }
     &__group-name {
     font-size: 15px;
+    color: #ffffff;
     margin-bottom: 5px;
     }
       &__message {
+      color: #ffffff;
       font-size: 11px;
       }
+        .group{
+          text-decoration: none;
+        }
 }
 
 .chat-main {
