@@ -11,7 +11,8 @@
       = link_to "#", class: "edit-btn" do
         Edit
   .chat-main__message__list
-
+    .messages
+      = render @messages
   .chat-main__message__form
     %form.form
       .input-box

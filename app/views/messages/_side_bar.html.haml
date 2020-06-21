@@ -14,7 +14,8 @@
   .side-header__group
     = link_to "#", class: "group" do
       .side-header__group-list
-        %p.side-header__group__group-name
-          17
-        %p.side-header__group__message
-          111111
+        = link_to group_messages_path(group) do
+          %p.side-header__group__group-name
+            = group.name
+          %p.side-header__group__message
+            メッセージはまだありません
