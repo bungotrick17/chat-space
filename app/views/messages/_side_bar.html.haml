@@ -12,10 +12,11 @@
             = icon('fas', 'cog',class:"icon")
 
   .side-header__group
-    = link_to "#", class: "group" do
-      .side-header__group-list
+    .side-header__group-list
+      - current_user.groups.each do |group|
         = link_to group_messages_path(group) do
-          %p.side-header__group__group-name
+          .side-header__group__group-name
             = group.name
-          %p.side-header__group__message
-            メッセージはまだありません
+          .side-header__group__message
+            メッセージはまだありません。
+
