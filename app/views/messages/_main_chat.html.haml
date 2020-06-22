@@ -2,23 +2,22 @@
   .chat-main__header
     .chat-main__header__left-box
       %h2.chat-main__header__left-box__current-group
-        AAA
+        = @group.name
       %ul.chat-main__header__left-box__member-list
         Member :
         %li.chat-main__header__left-box__member-list__member
-          kkk
+          - @group.users.each do |user|
+            = user.name
     .chat-main__header__edit-btn
-      = link_to "#", class: "edit-btn" do
+      = link_to edit_group_path(@group.id), class: "edit-btn" do
         Edit
   .chat-main__message__list
-    .messages
-      = render @messages
+    = render @messages
   .chat-main__message__form
-    %form.form
-      .input-box
-        = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
-        .form__mask
+    .form
+      = form_for [@group, @message] do |f|
+        .input-box
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
           = f.label :image, class: 'input-box__image' do
             = icon('fas', 'image')
             = f.file_field :image, class: 'hidden'
