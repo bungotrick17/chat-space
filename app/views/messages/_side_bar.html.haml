@@ -14,8 +14,10 @@
   .side-header__group
     .side-header__group-list
       - current_user.groups.each do |group|
-        = link_to '#', class: "group"do
+        = link_to group_messages_path(group) do
           .side-header__group__group-name
             = group.name
           .side-header__group__message
-            メッセージはまだありません。
+            = group.show_last_message
+
+

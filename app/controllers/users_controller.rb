@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   
+  def index
+    @user = User.includes(:user)
+  end
+
   def edit
   end
 
